@@ -1,8 +1,7 @@
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { ExternalLink, Github, X } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { ExternalLink, Github, X } from "lucide-react";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -12,64 +11,77 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with React, Node.js, and Stripe integration',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      demoUrl: '#',
-      codeUrl: '#',
-      details: 'A comprehensive e-commerce platform featuring user authentication, product catalog, shopping cart, payment processing, and admin dashboard. Built with modern technologies and following best practices.'
+      title: "A Simple Calculator",
+      description:
+        "A simple calculator app with basic arithmetic operations using HTML, CSS and Javascript",
+      image: "./calc.png",
+      tech: ["HTML", "CSS", "JavaScript"],
+      demoUrl: "./calc.mp4",
+      codeUrl: "https://github.com/vedaansh12/Calculator",
+      details:
+        "A simple calculator app with basic arithmetic operations using HTML, CSS and Javascript with all basic operations like addition, subtraction, multiplication, and division.",
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-      tech: ['React', 'TypeScript', 'Socket.io', 'Express'],
-      demoUrl: '#',
-      codeUrl: '#',
-      details: 'A real-time collaborative task management application with features like drag-and-drop kanban boards, team collaboration, file sharing, and progress tracking.'
+      title: "Task Management App",
+      description:
+        "Collaborative project management tool with real-time updates",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      tech: ["React", "TypeScript", "Socket.io", "Express"],
+      demoUrl: "#",
+      codeUrl: "#",
+      details:
+        "A real-time collaborative task management application with features like drag-and-drop kanban boards, team collaboration, file sharing, and progress tracking.",
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'Beautiful weather app with location-based forecasts',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
-      tech: ['React', 'API Integration', 'Charts.js'],
-      demoUrl: '#',
-      codeUrl: '#',
-      details: 'An elegant weather dashboard that provides detailed weather information, forecasts, and beautiful visualizations with location-based services.'
+      title: "Weather Dashboard",
+      description: "Beautiful weather app with location-based forecasts",
+      image:
+        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+      tech: ["React", "API Integration", "Charts.js"],
+      demoUrl: "#",
+      codeUrl: "#",
+      details:
+        "An elegant weather dashboard that provides detailed weather information, forecasts, and beautiful visualizations with location-based services.",
     },
     {
       id: 4,
-      title: 'Social Media App',
-      description: 'Modern social platform with real-time messaging',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
-      tech: ['React Native', 'Firebase', 'Redux'],
-      demoUrl: '#',
-      codeUrl: '#',
-      details: 'A full-featured social media application with user profiles, posts, real-time messaging, notifications, and content sharing capabilities.'
+      title: "Social Media App",
+      description: "Modern social platform with real-time messaging",
+      image:
+        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
+      tech: ["React Native", "Firebase", "Redux"],
+      demoUrl: "#",
+      codeUrl: "#",
+      details:
+        "A full-featured social media application with user profiles, posts, real-time messaging, notifications, and content sharing capabilities.",
     },
     {
       id: 5,
-      title: 'Analytics Dashboard',
-      description: 'Data visualization platform for business insights',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      tech: ['React', 'D3.js', 'Python', 'FastAPI'],
-      demoUrl: '#',
-      codeUrl: '#',
-      details: 'An advanced analytics dashboard providing interactive data visualizations, custom reports, and business intelligence insights.'
+      title: "Analytics Dashboard",
+      description: "Data visualization platform for business insights",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      tech: ["React", "D3.js", "Python", "FastAPI"],
+      demoUrl: "#",
+      codeUrl: "#",
+      details:
+        "An advanced analytics dashboard providing interactive data visualizations, custom reports, and business intelligence insights.",
     },
     {
       id: 6,
-      title: 'Learning Management System',
-      description: 'Online education platform with video streaming',
-      image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop',
-      tech: ['Next.js', 'Prisma', 'PostgreSQL', 'AWS'],
-      demoUrl: '#',
-      codeUrl: '#',
-      details: 'A comprehensive learning management system with course creation, video streaming, assessments, progress tracking, and student management.'
-    }
+      title: "Learning Management System",
+      description: "Online education platform with video streaming",
+      image:
+        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
+      tech: ["Next.js", "Prisma", "PostgreSQL", "AWS"],
+      demoUrl: "#",
+      codeUrl: "#",
+      details:
+        "A comprehensive learning management system with course creation, video streaming, assessments, progress tracking, and student management.",
+    },
   ];
 
   return (
@@ -83,10 +95,10 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            {t('projects.title')}
+            {t("projects.title")}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            {t('projects.subtitle')}
+            {t("projects.subtitle")}
           </p>
         </motion.div>
 
@@ -116,7 +128,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {project.title}
@@ -124,7 +136,7 @@ const Projects = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
                     <span
@@ -135,16 +147,21 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-4">
                   <button className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline">
                     <ExternalLink size={16} />
-                    {t('projects.viewProject')}
+                    {t("projects.viewProject")}
                   </button>
-                  <button className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:underline">
+                  <a
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:underline"
+                  >
                     <Github size={16} />
-                    {t('projects.viewCode')}
-                  </button>
+                    {t("projects.viewCode")}
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -181,16 +198,28 @@ const Projects = () => {
                     <X size={20} />
                   </button>
                 </div>
-                
+
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     {selectedProject.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 dark:text-gray-400 mb-6">
                     {selectedProject.details}
                   </p>
-                  
+                  {selectedProject.demoUrl &&
+                    selectedProject.demoUrl.endsWith(".mp4") && (
+                      <div className="mb-6">
+                        <video
+                          controls
+                          className="w-full h-auto rounded-lg shadow"
+                          src={selectedProject.demoUrl}
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    )}
+
                   <div className="flex flex-wrap gap-2 mb-6">
                     {selectedProject.tech.map((tech: string) => (
                       <span
@@ -201,16 +230,39 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex gap-4">
-                    <button className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors">
-                      <ExternalLink size={16} />
-                      {t('projects.viewProject')}
-                    </button>
-                    <button className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    {selectedProject.demoUrl &&
+                    selectedProject.demoUrl.endsWith(".mp4") ? (
+                      <button
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors"
+                        onClick={() =>
+                          window.open(selectedProject.demoUrl, "_blank")
+                        }
+                      >
+                        ▶️ {t("projects.watchDemo")}
+                      </button>
+                    ) : (
+                      <a
+                        href={selectedProject.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors"
+                      >
+                        <ExternalLink size={16} />
+                        {t("projects.viewProject")}
+                      </a>
+                    )}
+
+                    <a
+                      href={selectedProject.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    >
                       <Github size={16} />
-                      {t('projects.viewCode')}
-                    </button>
+                      {t("projects.viewCode")}
+                    </a>
                   </div>
                 </div>
               </motion.div>

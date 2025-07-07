@@ -33,7 +33,7 @@ const Resume = () => {
               <div className="mb-8">
                 <div className="w-32 h-40 bg-white dark:bg-gray-700 rounded-lg shadow-lg mx-auto mb-6 flex items-center justify-center overflow-hidden">
                   <img
-                    src="./resume.jpg" // Replace with your image path
+                    src="./resume.jpg" 
                     alt="Resume Preview"
                     className="object-cover w-full h-full"
                   />

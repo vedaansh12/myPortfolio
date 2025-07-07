@@ -15,22 +15,22 @@ const About = () => {
 
   const timeline = [
     {
-      year: '2024',
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      description: 'Leading development of enterprise applications using React, Node.js, and cloud technologies.'
+      year: '2020',
+      title: 'Class- 10',
+      company: 'St. Marys senior secondary school',
+      description: 'Completed my High School Examinations'
     },
     {
       year: '2022',
-      title: 'Full Stack Developer',
-      company: 'Digital Innovations',
-      description: 'Developed and maintained web applications for various clients using modern technologies.'
+      title: 'Class- 12',
+      company: 'St. Marys senior secondary school',
+      description: 'Completed my class 12 examination from CBSE Board'
     },
     {
       year: '2024',
       title: 'Frontend Developer',
-      company: 'StartUp Co.',
-      description: 'Created responsive user interfaces and improved user experience for web applications.'
+      company: '',
+      description: 'Creating responsive user interfaces and improved user experience for web applications and developing Other Skills'
     },
     {
       year: '2026',

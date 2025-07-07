@@ -11,10 +11,11 @@ const Skills = () => {
       title: 'Frontend',
       skills: [
         { name: 'React', level: 95 },
-        { name: 'TypeScript', level: 90 },
+        { name: 'Javascript', level: 90 },
         { name: 'Tailwind CSS', level: 88 },
         { name: 'Next.js', level: 85 },
-        { name: 'Vue.js', level: 80 }
+        { name: 'Vue.js', level: 60 },
+        { name: 'Angular.js', level: 55 }
       ]
     },
     {
@@ -24,17 +25,30 @@ const Skills = () => {
         { name: 'Python', level: 85 },
         { name: 'Express.js', level: 90 },
         { name: 'PostgreSQL', level: 88 },
-        { name: 'MongoDB', level: 82 }
+        { name: 'MongoDB', level: 82 },
+        { name: 'MySQL', level: 90 }
       ]
     },
     {
       title: 'Tools & Others',
       skills: [
-        { name: 'Git', level: 95 },
-        { name: 'Docker', level: 80 },
+        { name: 'Git', level: 80 },
+        { name: 'Android Studio', level: 50 },
         { name: 'AWS', level: 75 },
-        { name: 'Figma', level: 85 },
-        { name: 'Jest', level: 88 }
+        { name: 'Figma', level: 75 },
+        { name: 'Visual Studio', level: 88 },
+        { name: 'Power BI', level: 75 }
+      ]
+    },
+    {
+      title: 'Languages & More',
+      skills: [
+        { name: 'Python', level: 80 },
+        { name: 'Java', level: 75 },
+        { name: 'HTML and CSS', level: 95 },
+        { name: 'C', level: 75 },
+        { name: 'C++', level: 70 },
+        { name: 'DSA', level: 75 }
       ]
     }
   ];
@@ -57,7 +71,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
