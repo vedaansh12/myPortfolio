@@ -9,31 +9,13 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Johnson',
+      name: 'Rohan Singh',
       position: 'Project Manager',
-      company: 'Tech Solutions Inc.',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
-      content: 'John delivered exceptional work on our e-commerce platform. His attention to detail and technical expertise exceeded our expectations.',
+      company: 'example.ltd',
+      avatar: './download.jpg',
+      content: 'Vedaansh delivered exceptional work on our project. His attention to detail and technical expertise exceeded our expectations.',
       rating: 5
     },
-    {
-      id: 2,
-      name: 'Michael Chen',
-      position: 'CEO',
-      company: 'StartUp Co.',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-      content: 'Working with John was a pleasure. He brought our vision to life with clean, efficient code and great communication throughout the project.',
-      rating: 5
-    },
-    {
-      id: 3,
-      name: 'Emily Davis',
-      position: 'Marketing Director',
-      company: 'Digital Innovations',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-      content: 'The website John built for us has significantly improved our conversion rates. His understanding of both design and development is impressive.',
-      rating: 5
-    }
   ];
 
   const nextTestimonial = () => {
