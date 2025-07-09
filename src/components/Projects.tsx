@@ -23,65 +23,18 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "SQL QUERY COMPILER",
       description:
-        "Collaborative project management tool with real-time updates",
+        "A simple sql quer compiler app with basic sql operations with cohere ai integration and export to csv file features",
       image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+        "./sql.png",
       tech: ["React", "TypeScript", "Socket.io", "Express"],
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: "./sql.mp4",
+      codeUrl: "https://github.com/vedaansh12/sql_query_compiler",
       details:
-        "A real-time collaborative task management application with features like drag-and-drop kanban boards, team collaboration, file sharing, and progress tracking.",
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "Beautiful weather app with location-based forecasts",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      tech: ["React", "API Integration", "Charts.js"],
-      demoUrl: "#",
-      codeUrl: "#",
-      details:
-        "An elegant weather dashboard that provides detailed weather information, forecasts, and beautiful visualizations with location-based services.",
-    },
-    {
-      id: 4,
-      title: "Social Media App",
-      description: "Modern social platform with real-time messaging",
-      image:
-        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-      tech: ["React Native", "Firebase", "Redux"],
-      demoUrl: "#",
-      codeUrl: "#",
-      details:
-        "A full-featured social media application with user profiles, posts, real-time messaging, notifications, and content sharing capabilities.",
-    },
-    {
-      id: 5,
-      title: "Analytics Dashboard",
-      description: "Data visualization platform for business insights",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      tech: ["React", "D3.js", "Python", "FastAPI"],
-      demoUrl: "#",
-      codeUrl: "#",
-      details:
-        "An advanced analytics dashboard providing interactive data visualizations, custom reports, and business intelligence insights.",
-    },
-    {
-      id: 6,
-      title: "Learning Management System",
-      description: "Online education platform with video streaming",
-      image:
-        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
-      tech: ["Next.js", "Prisma", "PostgreSQL", "AWS"],
-      demoUrl: "#",
-      codeUrl: "#",
-      details:
-        "A comprehensive learning management system with course creation, video streaming, assessments, progress tracking, and student management.",
-    },
+        "A smart web-based SQL query compiler built using Python (Flask) and HTML/CSS/JavaScript, designed to help users write, execute, and troubleshoot SQL queries interactively. It integrates Cohere AI to offer intelligent query suggestions, auto-completions, and error correction tips, making it a powerful learning and productivity tool for students, developers, and data analysts.",
+    }
+    // Add more projects as needed
   ];
 
   return (
