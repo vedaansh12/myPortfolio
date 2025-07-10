@@ -4,7 +4,7 @@ import { ThemeProvider } from '../contexts/ThemeContext';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
-import IntroVideo from '../components/IntroVideo';
+// import IntroVideo from '../components/IntroVideo';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Resume from '../components/Resume';
@@ -20,7 +20,7 @@ const Index = () => {
         <Navigation />
         <Hero />
         <About />
-        <IntroVideo />
+{/*         <IntroVideo /> */}
         <Skills />
         <Projects />
         <Resume />
