@@ -33,6 +33,19 @@ const Projects = () => {
       codeUrl: "https://github.com/vedaansh12/sql_query_compiler",
       details:
         "A smart web-based SQL query compiler built using Python (Flask) and HTML/CSS/JavaScript, designed to help users write, execute, and troubleshoot SQL queries interactively. It integrates Cohere AI to offer intelligent query suggestions, auto-completions, and error correction tips, making it a powerful learning and productivity tool for students, developers, and data analysts.",
+    },
+    {
+      id: 3,
+      title: "PROCESS SCHEDULER SIMULATOR",
+      description:
+        "A Simple Process Scheduler Simulator web app with basic operations using python",
+      image:
+        "./priority_scheduling.png",
+      tech: ["Tkinter","Matplotlib", "python", "Pandas", "Numpy"],
+      demoUrl: "./priority_scheduling.mp4",
+      codeUrl: "https://github.com/vedaansh12/process_scheduling_simulator",
+      details:
+        "A Process Scheduler Simulator is a web-based application that simulates various CPU scheduling algorithms, allowing users to visualize and understand how different scheduling techniques manage process execution in an operating system. Built using Python for the backend and HTML/CSS/JavaScript for the frontend, this simulator provides an interactive platform for students and professionals to learn about process scheduling concepts such as First-Come-First-Served (FCFS), Shortest Job Next (SJN), Priority Scheduling, and Round Robin (RR). Users can input process details, select scheduling algorithms, and observe the resulting Gantt charts and performance metrics, enhancing their comprehension of operating system principles.",
     }
     // Add more projects as needed
   ];
