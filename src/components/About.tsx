@@ -27,9 +27,9 @@ const About = () => {
       description: 'Completed my class 12 examination from CBSE Board'
     },
     {
-      year: '2024',
-      title: 'Frontend Developer',
-      company: '',
+      year: '2025',
+      title: 'Intern Frontend Developer',
+      company: 'Believablevisualsolutions pvt ltd.',
       description: 'Creating responsive user interfaces and improved user experience for web applications and developing Other Skills'
     },
     {
