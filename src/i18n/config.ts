@@ -14,7 +14,6 @@ const resources = {
         contact: 'Contact'
       },
       hero: {
-        welcome: 'Welcome to my portfolio',
         name: 'Vedaansh Vishwakarma',
         titles: [
           'Full Stack Developer',
