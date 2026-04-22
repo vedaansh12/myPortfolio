@@ -28,7 +28,7 @@ const About = () => {
     },
     {
       year: '2025',
-      title: 'Intern Frontend Developer',
+      title: 'Web Developer Intern',
       company: 'Believablevisualsolutions pvt ltd.',
       description: 'Creating responsive user interfaces and improved user experience for web applications and developing Other Skills'
     },
@@ -36,7 +36,7 @@ const About = () => {
       year: '2026',
       title: 'Computer Science Degree',
       company: 'Graphic Era Hill University',
-      description: 'Graduated with honors, specializing in software engineering and web technologies.'
+      description: 'Graduated specializing in software engineering and web technologies.'
     }
   ];
 
