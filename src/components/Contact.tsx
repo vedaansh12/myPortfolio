@@ -2,43 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import emailjs from '@emailjs/browser';
 
-// Fix Leaflet's default icon issue in some builds
-
+// Fix Leaflet's default icon
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-});
+// -------------------------------------------------------
+// 🔑 REPLACE THESE 3 VALUES WITH YOUR EMAILJS CREDENTIALS
+const EMAILJS_SERVICE_ID  = 'service_u29qxmt';
+const EMAILJS_TEMPLATE_ID = 'template_p8niqc9';
+const EMAILJS_PUBLIC_KEY  = 'r7sMaKDgIqbHSlWqL';
+// -------------------------------------------------------
 
 const LocationMap = () => {
   const [position, setPosition] = useState<[number, number] | null>(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setPosition([pos.coords.latitude, pos.coords.longitude]);
-      },
-      (err) => {
-        console.error('Geolocation error:', err);
-        // fallback to Dehradun
-        setPosition([30.3165, 78.0322]);
-      }
+      (pos) => setPosition([pos.coords.latitude, pos.coords.longitude]),
+      () => setPosition([30.3165, 78.0322]) // fallback to Dehradun
     );
   }, []);
 
-  if (!position) {
-    return <p className="text-gray-500 dark:text-gray-400">Loading map...</p>;
-  }
+  if (!position) return <p className="text-gray-500 dark:text-gray-400">Loading map...</p>;
 
   return (
     <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ width: '100%', height: '100%' }}>
@@ -53,17 +46,41 @@ const LocationMap = () => {
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent! Thank you for reaching out.');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  const [formData, setFormData]   = useState({ name: '', email: '', message: '' });
+  const [status, setStatus]       = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:    formData.name,
+          from_email:   formData.email,
+          message:      formData.message,
+          to_email:     'vedaanshvishwakarma896@gmail.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+
+      // Reset status after 4 seconds
+      setTimeout(() => setStatus('idle'), 4000);
+
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   const contactInfo = [
@@ -77,7 +94,7 @@ const Contact = () => {
       icon: Phone,
       label: t('contact.phone'),
       value: '+91 7078513370',
-      href: 'tel:+91 7078513370'
+      href: 'tel:+917078513370'
     },
     {
       icon: MapPin,
@@ -106,7 +123,8 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
+
+          {/* ---- Contact Form ---- */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -114,6 +132,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
+
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -162,20 +181,38 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Submit */}
+              {/* Status Messages */}
+              {status === 'success' && (
+                <div className="w-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg text-sm font-medium">
+                  ✅ Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="w-full bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg text-sm font-medium">
+                  ❌ Something went wrong. Please try again or email me directly.
+                </div>
+              )}
+
+              {/* Submit Button */}
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                disabled={status === 'sending'}
+                whileHover={{ scale: status === 'sending' ? 1 : 1.02 }}
+                whileTap={{ scale: status === 'sending' ? 1 : 0.98 }}
+                className={`w-full py-4 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-lg transition-all duration-300
+                  ${status === 'sending'
+                    ? 'bg-gray-400 cursor-not-allowed text-white'
+                    : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl'
+                  }`}
               >
-                <Send size={20} />
-                {t('contact.send')}
+                <Send size={20} className={status === 'sending' ? 'animate-pulse' : ''} />
+                {status === 'sending' ? 'Sending...' : t('contact.send')}
               </motion.button>
+
             </form>
           </motion.div>
 
-          {/* Contact Info & Map */}
+          {/* ---- Contact Info & Map ---- */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -183,7 +220,6 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            {/* Contact Info */}
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -198,9 +234,7 @@ const Contact = () => {
                     <info.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">
-                      {info.label}
-                    </h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">{info.label}</h4>
                     <a
                       href={info.href}
                       className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -212,11 +246,11 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map */}
             <div className="h-64 w-full rounded-lg overflow-hidden">
               <LocationMap />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
