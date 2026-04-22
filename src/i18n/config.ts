@@ -18,13 +18,13 @@ const resources = {
         welcome: 'Welcome to my portfolio',
         name: 'Vedaansh Vishwakarma',
         titles: ['Full Stack Developer', 'React Expert', 'Problem Solver', 'Creative Thinker'],
-        description: 'Passionate Full Stack Developer creating innovative web solutions using modern technologies like React, Node.js, and Javascript.',
+        description: 'Full Stack Developer & Data Scientist crafting end-to-end digital experiences — from pixel-perfect React interfaces to intelligent, data-driven backends powered by Node.js and modern analytics.',
         downloadResume: 'Download Resume',
         contactMe: 'Contact Me'
       },
       about: {
         title: 'About Me',
-        bio: 'I am a passionate Full Stack Developer in creating dynamic, user-friendly web applications. My expertise spans across frontend technologies like React and TypeScript, as well as backend development with Node.js and databases. I love solving complex problems and turning ideas into reality through clean, efficient code.',
+        bio: 'I am a Full Stack Developer and Data Science enthusiast who transforms ideas into powerful digital experiences. With deep expertise in React, TypeScript, and Node.js on the web side — and data analytics, modeling, and visualization on the intelligence side — I build solutions that are not just functional, but insightful. I thrive at the intersection of clean code and meaningful data.',
         experience: 'Years Experience',
         projects: 'Projects Completed',
         clients: 'Happy Clients'
