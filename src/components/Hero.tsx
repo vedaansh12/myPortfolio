@@ -25,9 +25,6 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-              {t("hero.welcome")}
-            </p>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="text-gray-900 dark:text-white">Hi, I'm </span>
