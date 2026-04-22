@@ -51,8 +51,7 @@ const Hero = () => {
 
             <div id= "#contact" className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.a
-                href="./vedaanshResume.pdf" // Replace with your actual file path
-                download
+                href="#resume"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-shadow duration-300"
